@@ -34,30 +34,39 @@ class FarMar::Vendor
     end
   end
 
-  def product
-    products = FarMar::Product.all
-    products.each do |id, product|
-      if product.id == id
-        return product
-      end
+  def products
+    products = []
+    all_products = FarMar::Product.all
+    all_products.each do |product_id, product|
+      product.vendor_id == id ? products << product : false
     end
+    return products
   end
 
-  def sale
-    sales = FarMar::Sale.all
-    sales.each do |id, sale|
-      if sale.id == id
-        return sale
-      end
+  def sales
+    sales = []
+    all_sales = FarMar::Sale.all
+    all_sales.each do |sale_id, sale|
+      sale.vendor_id == id ? sales << sale : false
     end
+    return sales
   end
 
 def revenue
   transaction_total = 0
-  sale.each do |transaction|
-    transaction_total += transaction
+  sales.each do |transaction|
+    transaction_total += transaction.amount_in_cents
   end
   return transaction_total
+end
+
+def self.by_market(market_id)
+  selected_markets = []
+  all_vendors = self.all
+  all_vendors.each do |id, vendor|
+    vendor.market_id == market_id ? selected_markets << vendor : false
+  end
+  return selected_markets
 end
 
 end

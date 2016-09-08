@@ -30,12 +30,7 @@ class FarMar::Market
   end
 
   def vendors
-    #
-    # spit out a list of vendors whose market id matches a market id you input
-    #
-    # get market_id parameter
-    # take market_id parameter and if it matches the market id in vendor (in each array it's item -1 bruh) cough those vendors up
-
+    FarMar::Vendor.by_market(id)
   end
 
 end

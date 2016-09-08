@@ -25,5 +25,5 @@ require_relative './lib/vendors'
 # puts FarMar::Vendor.all
 # print FarMar::Vendor.find("2690")
 #
-# x = FarMar::Vendor.new(["2690", "Mann-Lueilwitz", "4", "500"])
-# puts x.market
+x = FarMar::Vendor.new(["2690", "Mann-Lueilwitz", "4", "500"])
+puts y = x.products
