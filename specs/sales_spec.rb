@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 describe "Testing FarMar::Sale" do
 
   it "Testing to see if I can create a new instance of sales" do
-    test1 = FarMar::Sale.new
+    test1 = FarMar::Sale.new("12001", "8923.0", "2013-11-12 02:03:31 -0800", "2690", "8192")
     expect(test1).must_be_instance_of(FarMar::Sale)
   end
 

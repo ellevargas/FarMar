@@ -3,7 +3,7 @@ class FarMar::Sale
 
   attr_reader :id, :amount_in_cents, :purchase_time, :vendor_id, :product_id
 
-  def initalize(id, amount_in_cents, purchase_time, vendor_id, product_id)
+  def initialize(id, amount_in_cents, purchase_time, vendor_id, product_id)
     @id = id
     @amount_in_cents = amount_in_cents
     @purchase_time = purchase_time

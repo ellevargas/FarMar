@@ -11,7 +11,7 @@ require_relative './lib/products'
 require_relative './lib/sales'
 require_relative './lib/vendors'
 
-product = FarMar::Product.new("something", "something else", "1123")
+# product = FarMar::Product.new("something", "something else", "1123")
 # TESTING ERRTHANG
 
 # puts FarMar::Market.all
@@ -21,7 +21,7 @@ product = FarMar::Product.new("something", "something else", "1123")
 # print FarMar::Product.find("8193")
 
 # puts FarMar::Sale.all
-# print FarMar::Sale.find("12001")
+print FarMar::Sale.find("12001")
 
 # puts FarMar::Vendor.all
-# print FarMar::Vendor.find("2690")
+print FarMar::Vendor.find("2690")
