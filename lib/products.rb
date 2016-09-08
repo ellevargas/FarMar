@@ -3,10 +3,10 @@ class FarMar::Product
 
   attr_accessor :id, :name, :vendor_id
 
-  def initialize(id, name, vendor_id)
-    @id = id
-    @name = name
-    @vendor_id = vendor_id
+  def initialize(array)
+    @id = array[0]
+    @name = array[1]
+    @vendor_id = array[2]
   end
 
   def self.all
@@ -14,7 +14,7 @@ class FarMar::Product
 
     CSV.open("./support/products.csv", 'r').each do |line|
       id = line[0]
-      all_instances[id] = line
+      all_instances[id] = self.new(line)
     end
     return all_instances
   end

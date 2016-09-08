@@ -3,12 +3,12 @@ class FarMar::Sale
 
   attr_reader :id, :amount_in_cents, :purchase_time, :vendor_id, :product_id
 
-  def initialize(id, amount_in_cents, purchase_time, vendor_id, product_id)
-    @id = id
-    @amount_in_cents = amount_in_cents
-    @purchase_time = purchase_time
-    @vendor_id = vendor_id
-    @product_id = product_id
+  def initialize(array)
+    @id = array[0]
+    @amount_in_cents = array[1].to_i
+    @purchase_time = array[2]
+    @vendor_id = array[3]
+    @product_id = array[4]
   end
 
   def self.all
@@ -16,7 +16,7 @@ class FarMar::Sale
 
     CSV.open("./support/sales.csv", 'r').each do |line|
       id = line[0]
-      all_instances[id] = line
+      all_instances[id] = self.new(line)
     end
     return all_instances
   end
