@@ -11,7 +11,7 @@ describe "Testing FarMar::Vendor" do
   end
 
   it "2 Testing to see if I can return all vendor instances" do
-    expect(vendor_all.length).must_equal(2690)
+    expect(vendor_all.length).must_be_instance_of(Fixnum)
   end
 
   it "3 Testing to see if I can return a specific vendor instance" do
@@ -36,13 +36,18 @@ describe "Testing FarMar::Vendor" do
   end
 
   it "7 Testing to see if revenue method works" do
-    test7 = FarMar::Vendor.find("1")
+    test7 = FarMar::Vendor.find("2690")
     expect(test7.revenue.class).must_equal(Fixnum)
-    expect(test7.revenue).must_equal(38259)
+    expect(test7.revenue).must_equal(16696)
   end
 
   it "8 Testing to see if self.by_market method works" do
     expect(FarMar::Vendor.by_market("2").class).must_equal(Array)
+  end
+
+  it "9 Testing to see if cents_to_dollars method works" do
+    test8 = FarMar::Vendor.find("1")
+    expect(test8.cents_to_dollars.class).must_equal(Float)
   end
 
 end

@@ -3,7 +3,7 @@
 # require_relative '../farmar'
 # require 'csv'
 
-class FarMar::SharedMethods
+module SharedMethods
 
   # attr_reader :all_accounts
 

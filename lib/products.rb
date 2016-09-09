@@ -21,7 +21,7 @@ class FarMar::Product
 
   def self.find(id)
     all_instances = self.all
-    return all_instances["#{id}"]
+    return all_instances[id]
   end
 
   def vendor
@@ -43,12 +43,7 @@ class FarMar::Product
   end
 
   def number_of_sales
-    sale_total = 0
-    sales.each do |sale|
-      sale.product_id == id ? sale_total += 1 : false
-      # sale_total += 1 if sale.product_id == id
-    end
-    return sale_total
+    sales.length
   end
 
   def self.by_vendor(vendor_id)

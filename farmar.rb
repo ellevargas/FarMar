@@ -35,3 +35,9 @@ require_all './lib'
 #
 # purchase_time = Time.parse("2013-11-10 02:44:56 -0800")
 # puts purchase_time
+
+# whee = FarMar::Market.new(["500", "Montefiore Medical Center Farmers Market_Thursday", "111 E. 210th Street", "Bronx", "Bronx", "New York", "10467"])
+# puts whee.vendors[0].id
+
+# yay = FarMar::Market.find("2")
+# puts yay.vendors

@@ -22,7 +22,7 @@ class FarMar::Vendor
 
   def self.find(id)
     all_instances = self.all
-    return all_instances["#{id}"]
+    return all_instances[id]
   end
 
   def market

@@ -26,11 +26,12 @@ class FarMar::Market
 
   def self.find(id)
     all_instances = self.all
-    return all_instances["#{id}"]
+    return all_instances[id]
   end
 
   def vendors
-    FarMar::Vendor.by_market(id)
+    vendor_list = FarMar::Vendor.by_market(self.id)
+    return vendor_list
   end
 
 end

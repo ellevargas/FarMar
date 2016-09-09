@@ -19,7 +19,7 @@ describe "Testing FarMar::Market" do
     expect(test1.class).must_equal(FarMar::Market)
   end
 
-  it "4 Testing to see if vendors method matches the call across to the vendors method" do
+  it "4 Testing to see if vendors method matches the call across to the by_market method in FarMar::Vendor" do
     expect(new_market.vendors.length).must_equal(FarMar::Vendor.by_market("500").length)
   end
 
