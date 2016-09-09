@@ -1,10 +1,11 @@
 require 'awesome_print'
-require 'require_all'
-require_all 'lib'
 require 'csv'
 
 module FarMar
 end
+
+require 'require_all'
+require_all './lib'
 
 # require_relative './lib/sharedmethods'
 # require_relative './lib/markets'
@@ -23,7 +24,8 @@ end
 # puts FarMar::Sale.all
 # print FarMar::Sale.find("12001")
 
-puts party = FarMar::Vendor.revenue
+# party = FarMar::Vendor.new(["2690", "Mann-Lueilwitz", "4", "500"])
+# puts extra_party = party.cents_to_dollars
 
 # puts FarMar::Vendor.all
 # print FarMar::Vendor.find("2690")

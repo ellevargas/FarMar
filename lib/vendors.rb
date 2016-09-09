@@ -62,7 +62,7 @@ end
 
 def cents_to_dollars
   revenue
-  dollars = revenue/100
+  dollars = (revenue/100.0).round(2)
 end
 
 def self.by_market(market_id)

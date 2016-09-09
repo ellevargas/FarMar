@@ -12,7 +12,7 @@ class FarMar::SharedMethods
 
     CSV.open(file, 'r').each do |line|
       id_key = line[0]
-      # line.delete_at(0) < if I need to show everything but id
+
       all_accounts[id_key] = line
     end
     return all_accounts

@@ -2,7 +2,6 @@ require 'simplecov'
 SimpleCov.start
 
 require 'time'
-require 'require_all'
 
 require 'minitest'
 require 'minitest/spec'
