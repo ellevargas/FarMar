@@ -24,4 +24,40 @@ class FarMar::Product
     return all_instances["#{id}"]
   end
 
+  def vendor
+    vendors = FarMar::Vendor.all
+    vendors.each do |id, vendor|
+      if vendor.id == vendor_id
+        return vendor
+      end
+    end
+  end
+
+  def sales
+    sales = []
+    all_sales = FarMar::Sale.all
+    all_sales.each do |sale_id, sale|
+      sale.product_id == id ? sales << sale : false
+    end
+    return sales
+  end
+
+  def number_of_sales
+    sale_total = 0
+    sales.each do |sale|
+      sale.product_id == id ? sale_total += 1 : false
+      # sale_total += 1 if sale.product_id == id
+    end
+    return sale_total
+  end
+
+  def self.by_vendor(vendor_id)
+    selected_vendors = []
+    all_products = self.all
+    all_products.each do |id, product|
+      product.vendor_id == vendor_id ? selected_vendors << product : false
+    end
+    return selected_vendors
+  end
+
 end

@@ -2,13 +2,9 @@ require_relative 'spec_helper'
 
 describe "Testing FarMar::Market" do
 
-  let (:new_market){
-    FarMar::Market.new(["500", "Montefiore Medical Center Farmers Market_Thursday", "111 E. 210th Street", "Bronx", "Bronx", "New York", "10467"])
-  }
+  let (:new_market){FarMar::Market.new(["500", "Montefiore Medical Center Farmers Market_Thursday", "111 E. 210th Street", "Bronx", "Bronx", "New York", "10467"])}
 
-  let (:market_all){
-    FarMar::Market.all
-  }
+  let (:market_all){FarMar::Market.all}
 
   it "1 Testing to see if I can create a new instance of market" do
     expect(new_market).must_be_instance_of(FarMar::Market)

@@ -49,7 +49,7 @@ class FarMar::Vendor
     all_sales.each do |sale_id, sale|
       sale.vendor_id == id ? sales << sale : false
     end
-    return sales
+    return sales # returned in cents
   end
 
 def revenue
@@ -58,6 +58,11 @@ def revenue
     transaction_total += transaction.amount_in_cents
   end
   return transaction_total
+end
+
+def cents_to_dollars
+  revenue
+  dollars = revenue/100
 end
 
 def self.by_market(market_id)
